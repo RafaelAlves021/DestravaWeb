@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforme seu Negócio em uma Máquina de Vendas Online</title>
+
+    <!-- Tailwind CSS (Framework Utilitário para Estilização Rápida) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Biblioteca de Ícones Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Estilos Personalizados do Mockup e Efeitos Visuais -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-emerald-500 selection:text-white">
+
+    <!-- ========================================== -->
+    <!-- BARRA DE NAVEGAÇÃO SUPERIOR (HEADER)       -->
+    <!-- ========================================== -->
+    <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <!-- Logotipo da Marca -->
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
+                    <i class="fa-solid fa-chart-line text-lg"></i>
+                </div>
+                <div>
+                    <span class="text-xl font-bold tracking-tight text-white block leading-none">Negócio<span class="text-emerald-400">Digital</span></span>
+                    <span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Soluções em Vendas</span>
+                </div>
+            </div>
+
+            <!-- Links de Navegação da Página -->
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
+                <a href="#raio-x" class="hover:text-emerald-400 transition-colors">Raio-X Interativo</a>
+                <a href="#problemas" class="hover:text-emerald-400 transition-colors">O Diagnóstico</a>
+                <a href="#solucoes" class="hover:text-emerald-400 transition-colors">Nossos Sistemas</a>
+                <a href="#metodo" class="hover:text-emerald-400 transition-colors">Como Funciona</a>
+            </nav>
+
+            <!-- Botão de Contato Direto via WhatsApp -->
+            <a href="https://wa.me/5521966386120?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20diagn%C3%B3stico%20do%20meu%20neg%C3%B3cio." 
+               target="_blank" 
+               class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-5 py-2.5 rounded-lg text-sm transition-all shadow-md shadow-emerald-500/20">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span class="hidden sm:inline">Falar com Consultor</span>
+                <span class="sm:hidden">Contato</span>
+            </a>
+        </div>
+    </header>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO HERO & RAIO-X INTERATIVO (SPLIT SCREEN) -->
+    <!-- ========================================== -->
+    <main id="raio-x" class="relative pt-10 pb-20 lg:pt-16 lg:pb-28">
+        <!-- Luz de fundo (Efeito Glow verde) -->
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none"></div>
+
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-3xl mx-auto mb-14">
+                <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                    <span class="w-2 h-2 rounded-full bg-emerald-400 animate-ping"></span>
+                    Simulador em Tempo Real
+                </div>
+                <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight text-white leading-tight mb-4">
+                    Pare de perder até 30% das suas vendas com taxas abusivas e WhatsApp travado.
+                </h1>
+                <p class="text-base sm:text-lg text-slate-400">
+                    Construímos ferramentas digitais sob medida focadas em <strong>faturamento e autonomia</strong> para microempresas e clínicas. Monte a prévia do seu negócio em 60 segundos:
+                </p>
+            </div>
+
+            <!-- Grid Principal Split Screen -->
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
+                
+                <!-- COLUNA ESQUERDA: QUIZ INTERATIVO (7 Colunas) -->
+                <div class="lg:col-span-7 bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur shadow-2xl relative">
+                    
+                    <!-- Barra de Progresso das Etapas -->
+                    <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-6">
+                        <div class="flex items-center gap-3">
+                            <span id="step-badge" class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold flex items-center justify-center text-sm">1</span>
+                            <div>
+                                <span class="text-xs uppercase font-medium text-slate-400 tracking-wider">Etapa <span id="step-number-text">1</span> de 3</span>
+                                <h3 id="step-title-text" class="text-base font-semibold text-white">Identidade do Negócio</h3>
+                            </div>
+                        </div>
+                        <div class="flex gap-1.5">
+                            <div id="dot-1" class="w-7 h-1.5 rounded-full bg-emerald-500 transition-colors"></div>
+                            <div id="dot-2" class="w-7 h-1.5 rounded-full bg-slate-700 transition-colors"></div>
+                            <div id="dot-3" class="w-7 h-1.5 rounded-full bg-slate-700 transition-colors"></div>
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 1: Identidade e Grelha de Nichos com Saúde -->
+                    <div id="step-1" class="quiz-step space-y-6">
+                        <div>
+                            <label for="company-name" class="block text-sm font-medium text-slate-200 mb-2">Qual é o nome da sua empresa / marca?</label>
+                            <!-- Placeholder Atualizado com exemplos de Saúde e Estética -->
+                            <input type="text" id="company-name" placeholder="Ex: Sorriso Prime, NutriVida, Studio Bella..." 
+                                   class="w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-medium text-slate-200 mb-2">Qual é a sua principal especialidade?</label>
+                            <!-- Grelha responsiva de especialidades com Odontologia e Nutrição adicionadas -->
+                            <div class="grid grid-cols-2 sm:grid-cols-3 gap-2.5">
+                                <button type="button" class="niche-btn active-niche p-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/60 text-left transition flex items-center gap-3" data-niche="burger">
+                                    <i class="fa-solid fa-burger text-amber-400 text-base"></i>
+                                    <span class="text-xs font-semibold text-white">Hambúrguer</span>
+                                </button>
+                                <button type="button" class="niche-btn p-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/60 text-left transition flex items-center gap-3" data-niche="pizza">
+                                    <i class="fa-solid fa-pizza-slice text-red-400 text-base"></i>
+                                    <span class="text-xs font-semibold text-white">Pizza</span>
+                                </button>
+                                <button type="button" class="niche-btn p-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/60 text-left transition flex items-center gap-3" data-niche="beauty">
+                                    <i class="fa-solid fa-wand-magic-sparkles text-fuchsia-400 text-base"></i>
+                                    <span class="text-xs font-semibold text-white">Salão & Estética</span>
+                                </button>
+                                <button type="button" class="niche-btn p-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/60 text-left transition flex items-center gap-3" data-niche="barber">
+                                    <i class="fa-solid fa-scissors text-amber-600 text-base"></i>
+                                    <span class="text-xs font-semibold text-white">Barbearia</span>
+                                </button>
+                                <button type="button" class="niche-btn p-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/60 text-left transition flex items-center gap-3" data-niche="pet">
+                                    <i class="fa-solid fa-paw text-cyan-400 text-base"></i>
+                                    <span class="text-xs font-semibold text-white">Pet Shop</span>
+                                </button>
+                                <button type="button" class="niche-btn p-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/60 text-left transition flex items-center gap-3" data-niche="fitness">
+                                    <i class="fa-solid fa-dumbbell text-emerald-400 text-base"></i>
+                                    <span class="text-xs font-semibold text-white">Academia / Fitness</span>
+                                </button>
+                                <button type="button" class="niche-btn p-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/60 text-left transition flex items-center gap-3" data-niche="auto">
+                                    <i class="fa-solid fa-wrench text-blue-400 text-base"></i>
+                                    <span class="text-xs font-semibold text-white">Oficina Mecânica</span>
+                                </button>
+                                <!-- Novo Nicho 1: Clínica Odontológica -->
+                                <button type="button" class="niche-btn p-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/60 text-left transition flex items-center gap-3" data-niche="dental">
+                                    <i class="fa-solid fa-tooth text-sky-400 text-base"></i>
+                                    <span class="text-xs font-semibold text-white">Clínica Odonto</span>
+                                </button>
+                                <!-- Novo Nicho 2: Clínica de Nutrição -->
+                                <button type="button" class="niche-btn p-3 rounded-xl border border-slate-700 bg-slate-800/80 hover:bg-slate-700/60 text-left transition flex items-center gap-3" data-niche="nutrition">
+                                    <i class="fa-solid fa-apple-whole text-emerald-400 text-base"></i>
+                                    <span class="text-xs font-semibold text-white">Clínica Nutrição</span>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex justify-end">
+                            <button type="button" id="next-to-step-2" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm inline-flex items-center gap-2 transition">
+                                Próxima Etapa <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 2: Gargalos Operacionais e Atendimento -->
+                    <div id="step-2" class="quiz-step hidden space-y-6">
+                        <div>
+                            <label class="block text-sm font-medium text-slate-200 mb-2">Como você atende a maioria dos clientes hoje?</label>
+                            <p class="text-xs text-slate-400 mb-4">Selecione onde ocorre o seu maior gargalo de atendimento:</p>
+                            
+                            <div class="space-y-3">
+                                <button type="button" class="channel-btn border border-slate-700 hover:border-emerald-500 bg-slate-950/60 p-4 rounded-xl w-full text-left flex items-start gap-3 transition" data-channel="whatsapp">
+                                    <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-brands fa-whatsapp"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white">WhatsApp Manual</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">Demora nas respostas, clientes desistem e a equipa fica sobrecarregada em horários de pico.</p>
+                                    </div>
+                                </button>
+
+                                <button type="button" class="channel-btn border border-slate-700 hover:border-emerald-500 bg-slate-950/60 p-4 rounded-xl w-full text-left flex items-start gap-3 transition" data-channel="apps">
+                                    <div class="w-8 h-8 rounded-lg bg-red-500/20 text-red-400 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-solid fa-percent"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white">Plataformas Terceiras com Taxas Altas</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">Comissões pesadas que corroem o lucro e deixam a sua empresa refém de intermediários.</p>
+                                    </div>
+                                </button>
+
+                                <button type="button" class="channel-btn border border-slate-700 hover:border-emerald-500 bg-slate-950/60 p-4 rounded-xl w-full text-left flex items-start gap-3 transition" data-channel="direct">
+                                    <div class="w-8 h-8 rounded-lg bg-blue-500/20 text-blue-400 flex items-center justify-center shrink-0 mt-0.5">
+                                        <i class="fa-brands fa-instagram"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="text-sm font-semibold text-white">Direct do Instagram ou Telefone</h4>
+                                        <p class="text-xs text-slate-400 mt-0.5">Agendamentos perdidos em cadernos, confusão de horários e falta de controle.</p>
+                                    </div>
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="pt-4 flex justify-between items-center">
+                            <button type="button" id="back-to-step-1" class="text-xs text-slate-400 hover:text-white font-medium flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-arrow-left"></i> Voltar
+                            </button>
+                            <button type="button" id="next-to-step-3" class="px-6 py-3 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-bold text-sm inline-flex items-center gap-2 transition">
+                                Próxima Etapa <i class="fa-solid fa-arrow-right"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- ETAPA 3: Produto / Serviço e Preço Dinâmico -->
+                    <div id="step-3" class="quiz-step hidden space-y-6">
+                        <div>
+                            <label id="label-product-name" for="product-name" class="block text-sm font-medium text-slate-200 mb-2">Qual é o seu produto ou serviço principal?</label>
+                            <input type="text" id="product-name" value="Smash Bacon Duplo Especial" 
+                                   class="w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl px-4 py-3 text-white placeholder-slate-500 text-sm outline-none transition">
+                        </div>
+
+                        <div>
+                            <label id="label-product-price" for="product-price" class="block text-sm font-medium text-slate-200 mb-2">Preço ou valor médio (R$):</label>
+                            <div class="relative">
+                                <span class="absolute left-4 top-1/2 -translate-y-1/2 text-slate-400 text-sm font-semibold">R$</span>
+                                <input type="number" id="product-price" value="34.90" step="0.50" min="1" 
+                                       class="w-full bg-slate-950 border border-slate-700 focus:border-emerald-500 focus:ring-1 focus:ring-emerald-500 rounded-xl pl-12 pr-4 py-3 text-white text-sm outline-none transition">
+                            </div>
+                        </div>
+
+                        <div class="p-4 rounded-xl bg-emerald-500/10 border border-emerald-500/20 text-xs text-slate-300 flex items-center gap-3">
+                            <i class="fa-solid fa-wand-magic-sparkles text-emerald-400 text-lg shrink-0"></i>
+                            <span>Veja o smartphone ao lado adaptar instantaneamente os botões e detalhes do seu segmento!</span>
+                        </div>
+
+                        <div class="pt-4 flex justify-between items-center">
+                            <button type="button" id="back-to-step-2" class="text-xs text-slate-400 hover:text-white font-medium flex items-center gap-1.5 transition">
+                                <i class="fa-solid fa-arrow-left"></i> Voltar
+                            </button>
+                            <button type="button" id="finish-quiz" class="px-6 py-3 rounded-xl bg-gradient-to-r from-emerald-500 to-teal-500 hover:from-emerald-400 hover:to-teal-400 text-slate-950 font-bold text-sm inline-flex items-center gap-2 transition shadow-lg shadow-emerald-500/20">
+                                <i class="fa-solid fa-check"></i> Finalizar Simulação
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- TELA DE SUCESSO -->
+                    <div id="step-success" class="quiz-step hidden space-y-6 text-center py-4">
+                        <div class="w-16 h-16 rounded-full bg-emerald-500/20 text-emerald-400 flex items-center justify-center mx-auto text-2xl border border-emerald-500/40">
+                            <i class="fa-solid fa-rocket"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-xl font-bold text-white mb-2">Sua Solução Digital Está Pronta!</h3>
+                            <p class="text-sm text-slate-300 max-w-md mx-auto">
+                                Com um sistema próprio, você automatiza atendimentos, organiza a agenda, elimina intermediários e oferece uma experiência de primeira linha ao seu cliente.
+                            </p>
+                        </div>
+
+                        <div class="pt-4 flex flex-col gap-3">
+                            <a id="cta-whatsapp-link" href="#" target="_blank" 
+                               class="w-full py-4 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm sm:text-base inline-flex items-center justify-center gap-2 transition shadow-xl shadow-emerald-500/25">
+                                <i class="fa-brands fa-whatsapp text-lg"></i>
+                                Quero colocar uma página profissional no ar para o meu negócio
+                            </a>
+                            <button type="button" id="restart-quiz" class="text-xs text-slate-400 hover:text-white underline">
+                                Recomeçar simulação
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- COLUNA DIREITA: SMARTPHONE MOCKUP CAMALEÃO (5 Colunas) -->
+                <div class="lg:col-span-5 flex justify-center sticky top-28">
+                    <div class="phone-frame w-[310px] sm:w-[340px] h-[640px] bg-slate-950 rounded-[48px] p-3 border-4 border-slate-700 shadow-2xl relative">
+                        
+                        <!-- Dynamic Island -->
+                        <div class="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-4 bg-slate-900 rounded-full z-30 flex items-center justify-center">
+                            <div class="w-2.5 h-2.5 rounded-full bg-black/60 mr-2"></div>
+                            <div class="w-2 h-2 rounded-full bg-blue-900/40"></div>
+                        </div>
+
+                        <!-- Tela do Aparelho (Viewport) -->
+                        <div class="w-full h-full bg-slate-900 rounded-[38px] overflow-hidden flex flex-col relative text-slate-100">
+                            
+                            <!-- Barra de Status Mobile -->
+                            <div class="h-9 px-6 pt-2 flex items-center justify-between text-[10px] text-slate-400 font-semibold z-20">
+                                <span>19:42</span>
+                                <div class="flex items-center gap-1.5">
+                                    <i class="fa-solid fa-signal text-[9px]"></i>
+                                    <i class="fa-solid fa-wifi text-[9px]"></i>
+                                    <i class="fa-solid fa-battery-full text-[10px]"></i>
+                                </div>
+                            </div>
+
+                            <!-- Área com Rolagem do Mini Aplicativo -->
+                            <div class="flex-1 overflow-y-auto px-4 pb-20 pt-2 space-y-4 text-left custom-scroll">
+                                
+                                <!-- Cabeçalho Camaleão com Cores e Badges Adaptativos -->
+                                <div id="preview-header-card" class="rounded-2xl p-4 transition-all duration-300">
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span id="preview-niche-tag" class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full">
+                                            Hambúrguer Artesanal
+                                        </span>
+                                        <div class="flex items-center gap-1.5">
+                                            <span class="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse"></span>
+                                            <span id="preview-status-badge" class="text-[10px] text-emerald-400 font-semibold">● Aberto agora</span>
+                                        </div>
+                                    </div>
+                                    <h4 id="preview-business-name" class="text-lg font-extrabold text-white leading-tight">
+                                        Minha Hamburgueria
+                                    </h4>
+                                    <p class="text-[11px] text-slate-300 mt-1 flex items-center gap-2">
+                                        <span><i class="fa-solid fa-star text-amber-400 text-[10px]"></i> 4.9 (184 avaliações)</span>
+                                        <span>•</span>
+                                        <span id="preview-delivery-time">30-45 min</span>
+                                    </p>
+                                </div>
+
+                                <!-- Selo de Canal Direto -->
+                                <div id="preview-badge-direct" class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2.5">
+                                    <div class="w-7 h-7 rounded-lg bg-emerald-500 text-slate-950 flex items-center justify-center text-xs shrink-0 font-bold">
+                                        <i class="fa-solid fa-shield-halved"></i>
+                                    </div>
+                                    <div>
+                                        <p class="text-[11px] font-bold text-white leading-tight">Canal Oficial Direto</p>
+                                        <p class="text-[10px] text-emerald-400">Sem intermediários e sem taxas abusivas</p>
+                                    </div>
+                                </div>
+
+                                <!-- Card do Item / Serviço em Destaque -->
+                                <div>
+                                    <div class="flex items-center justify-between mb-2">
+                                        <span id="preview-section-title" class="text-[11px] font-bold text-slate-300 uppercase tracking-wider">Mais Pedido</span>
+                                        <span id="preview-tag-feature" class="text-[10px] text-slate-400 uppercase font-semibold">ENTREGA RÁPIDA</span>
+                                    </div>
+
+                                    <div class="p-3 rounded-xl bg-slate-800/90 border border-slate-700/80 flex items-center gap-3">
+                                        <div class="w-12 h-12 rounded-lg bg-slate-700 flex items-center justify-center text-xl shrink-0" id="preview-item-icon">
+                                            <i class="fa-solid fa-burger"></i>
+                                        </div>
+                                        <div class="flex-1 min-w-0">
+                                            <p id="preview-item-name" class="text-xs font-bold text-white truncate">Smash Bacon Duplo Especial</p>
+                                            <p id="preview-item-price" class="text-xs font-extrabold text-emerald-400 mt-0.5">R$ 34,90</p>
+                                        </div>
+
+                                        <!-- AÇÃO 1: Mini Carrinho (+ / -) para Delivery -->
+                                        <div id="preview-cart-controls" class="flex items-center gap-1.5 bg-slate-900 px-2 py-1 rounded-lg border border-slate-700">
+                                            <button type="button" id="cart-minus" class="text-xs text-slate-400 hover:text-white px-1">-</button>
+                                            <span id="cart-qty" class="text-xs font-bold text-white px-1">1</span>
+                                            <button type="button" id="cart-plus" class="text-xs text-slate-400 hover:text-white px-1">+</button>
+                                        </div>
+
+                                        <!-- AÇÃO 2: Botão Direto para Serviços/Agendamento -->
+                                        <button type="button" id="preview-service-action-btn" class="hidden px-2.5 py-1.5 rounded-lg text-[10px] font-bold shrink-0 transition">
+                                            Agendar Horário
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <!-- Alerta Visual de Ação Simulada -->
+                                <div id="preview-order-alert" class="hidden p-3 rounded-xl bg-emerald-500 text-slate-950 text-[11px] font-medium animate-bounce shadow-lg">
+                                    <div class="flex items-center gap-2">
+                                        <i class="fa-solid fa-circle-check text-sm"></i>
+                                        <span id="preview-order-alert-text"><strong>Ação Simulada!</strong> Integrada diretamente ao WhatsApp.</span>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <!-- Barra Fixa Inferior de Checkout / Agendamento -->
+                            <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-2xl bg-slate-800/95 border border-slate-700 backdrop-blur flex items-center justify-between shadow-lg">
+                                <div>
+                                    <span id="preview-bottom-label" class="text-[9px] uppercase tracking-wider text-slate-400 block font-semibold">Total Estimado</span>
+                                    <span id="preview-total-price" class="text-xs font-extrabold text-emerald-400">R$ 34,90</span>
+                                </div>
+                                <button type="button" id="preview-btn-order" class="px-3.5 py-1.5 rounded-xl bg-emerald-500 text-slate-950 font-bold text-[11px] flex items-center gap-1.5 hover:bg-emerald-400 transition">
+                                    <i class="fa-brands fa-whatsapp text-xs"></i> <span id="preview-btn-order-text">Pedir Agora</span>
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </main>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO COMPLEMENTAR: PROBLEMAS DE MERCADO    -->
+    <!-- ========================================== -->
+    <section id="problemas" class="py-20 bg-slate-900/50 border-t border-b border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-red-400 mb-2">Os Vilões do Seu Faturamento</h2>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Por que você está deixando dinheiro na mesa todos os dias</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-red-500/40 transition">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-comments-dollar"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Lentidão no WhatsApp</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Seu cliente tem pressa. Esperar mais de 5 minutos por uma resposta manual faz ele fechar na hora com o seu concorrente.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-red-500/40 transition">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-hand-holding-dollar"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Taxas Absurdas de Apps</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Pagar de 25% a 30% de comissão para grandes plataformas significa entregar boa parte do seu lucro líquido para terceiros.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-red-500/40 transition">
+                    <div class="w-12 h-12 rounded-xl bg-red-500/10 text-red-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-magnifying-glass-location"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Invisível no Google Local</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Sem uma página rápida e otimizada com SEO local, quem procura por serviços ou produtos no seu bairro não encontra você.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO COMPLEMENTAR: SOLUÇÕES ENTREGUES     -->
+    <!-- ========================================== -->
+    <section id="solucoes" class="py-20">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Nossas Entregas de Alto Impacto</h2>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Não vendemos só código. Entregamos ferramentas que vendem.</h3>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-bolt"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Landing Pages Ultrarrápidas</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Páginas que carregam em menos de 1 segundo no celular, com arquitetura limpa e alta taxa de conversão de visitantes em clientes.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-solid fa-calendar-check"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Catálogos & Agendamento Integrado</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        O cliente escolhe os produtos ou agenda consultas com poucos cliques, recebendo tudo formatado no seu WhatsApp comercial.
+                    </p>
+                </div>
+
+                <div class="p-6 rounded-2xl bg-slate-900 border border-slate-800 hover:border-emerald-500/50 transition">
+                    <div class="w-12 h-12 rounded-xl bg-emerald-500/10 text-emerald-400 flex items-center justify-center text-xl mb-4">
+                        <i class="fa-brands fa-python"></i>
+                    </div>
+                    <h4 class="text-lg font-bold text-white mb-2">Sistemas Robustos com Django</h4>
+                    <p class="text-sm text-slate-400 leading-relaxed">
+                        Painéis administrativos seguros para gerenciar pacientes, comandas, relatórios financeiros e métricas de crescimento.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- SEÇÃO COMPLEMENTAR: METODOLOGIA EM 4 PASSOS -->
+    <!-- ========================================== -->
+    <section id="metodo" class="py-20 bg-slate-900/50 border-t border-slate-800">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="text-center max-w-2xl mx-auto mb-16">
+                <h2 class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-2">Processo Sem Burocracia</h2>
+                <h3 class="text-2xl sm:text-3xl font-extrabold text-white">Como colocamos o seu negócio no ar em 4 passos</h3>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <span class="text-3xl font-black text-slate-700 mb-3 block">01</span>
+                    <h4 class="text-base font-bold text-white mb-1">Diagnóstico Comercial</h4>
+                    <p class="text-xs text-slate-400">Entendemos suas vendas, seu público e onde estão os gargalos do seu atendimento.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <span class="text-3xl font-black text-slate-700 mb-3 block">02</span>
+                    <h4 class="text-base font-bold text-white mb-1">Design de Conversão</h4>
+                    <p class="text-xs text-slate-400">Criamos um protótipo focado em praticidade e retenção visual para o seu cliente.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <span class="text-3xl font-black text-slate-700 mb-3 block">03</span>
+                    <h4 class="text-base font-bold text-white mb-1">Desenvolvimento e Lançamento</h4>
+                    <p class="text-xs text-slate-400">Código limpo, hospedagem rápida e publicação do seu domínio próprio no ar.</p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-900/80 border border-slate-800">
+                    <span class="text-3xl font-black text-slate-700 mb-3 block">04</span>
+                    <h4 class="text-base font-bold text-white mb-1">Treinamento e Suporte</h4>
+                    <p class="text-xs text-slate-400">Ensinamos a sua equipe a gerenciar pedidos e acompanhar seus resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ========================================== -->
+    <!-- RODAPÉ DA PÁGINA (FOOTER)                  -->
+    <!-- ========================================== -->
+    <footer class="border-t border-slate-800 py-10 bg-slate-950">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
+            <p>© 2026 Negócio Digital. Todos os direitos reservados. Foco em soluções de vendas e autonomia comercial.</p>
+            <div class="flex items-center gap-6">
+                <a href="#raio-x" class="hover:text-white transition">Voltar ao Topo</a>
+                <a href="https://wa.me/5521966386120" target="_blank" class="hover:text-emerald-400 transition flex items-center gap-1.5">
+                    <i class="fa-brands fa-whatsapp"></i> Fale Conosco
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Arquivo de scripts JavaScript -->
+    <script src="script.js"></script>
+</body>
+</html>
