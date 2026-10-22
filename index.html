@@ -3,21 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Título da página atualizado com o nome da sua marca -->
     <title>DestravaCommerce | Soluções em Vendas e Presença Digital</title>
 
-    <!-- Tailwind CSS (Framework Utilitário para Estilização Ágil) -->
+    <!-- Tailwind CSS (Framework Utilitário para Estilização) -->
     <script src="https://cdn.tailwindcss.com"></script>
     
     <!-- Biblioteca de Ícones Font Awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
-    <!-- Google Fonts: Inter -->
+    <!-- Fonte do Google: Inter -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     
-    <!-- Estilos Personalizados do Mockup e Animações -->
+    <!-- Estilos Personalizados do Mockup e Efeitos Visuais -->
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="bg-slate-950 text-slate-100 font-sans antialiased overflow-x-hidden selection:bg-emerald-500 selection:text-white">
@@ -27,29 +26,30 @@
     <!-- ========================================== -->
     <header class="border-b border-slate-800/80 bg-slate-900/60 backdrop-blur-md sticky top-0 z-50">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
-            <!-- Logotipo da Marca DestravaCommerce -->
+            <!-- Logotipo DestravaCommerce -->
             <div class="flex items-center gap-3">
                 <div class="w-10 h-10 rounded-xl bg-gradient-to-br from-emerald-500 to-teal-700 flex items-center justify-center text-white shadow-lg shadow-emerald-500/20">
                     <i class="fa-solid fa-chart-line text-lg"></i>
                 </div>
                 <div>
-                    <!-- Nome estilizado: Destrava em branco e Commerce em verde esmeralda -->
                     <span class="text-xl font-bold tracking-tight text-white block leading-none">Destrava<span class="text-emerald-400">Commerce</span></span>
                     <span class="text-[10px] text-slate-400 font-medium uppercase tracking-wider">Soluções em Vendas</span>
                 </div>
             </div>
 
-            <!-- Links de Navegação da Página -->
+            <!-- Links de Navegação (Padronizados sem a bolinha verde) -->
             <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-slate-300">
                 <a href="#raio-x" class="hover:text-emerald-400 transition-colors">Raio-X Interativo</a>
                 <a href="#problemas" class="hover:text-emerald-400 transition-colors">O Diagnóstico</a>
                 <a href="#solucoes" class="hover:text-emerald-400 transition-colors">Nossos Sistemas</a>
+                <a href="#portfolio" class="hover:text-emerald-400 transition-colors">Portfólio</a>
                 <a href="#metodo" class="hover:text-emerald-400 transition-colors">Como Funciona</a>
             </nav>
 
             <!-- Botão de Contato Direto via WhatsApp -->
             <a href="https://wa.me/5521966386120?text=Ol%C3%A1!%20Gostaria%20de%20fazer%20um%20diagn%C3%B3stico%20do%20meu%20neg%C3%B3cio." 
                target="_blank" 
+               rel="noopener noreferrer"
                class="inline-flex items-center gap-2 bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-semibold px-5 py-2.5 rounded-lg text-sm transition-all shadow-md shadow-emerald-500/20">
                 <i class="fa-brands fa-whatsapp text-base"></i>
                 <span class="hidden sm:inline">Falar com Consultor</span>
@@ -62,7 +62,6 @@
     <!-- SEÇÃO HERO & RAIO-X INTERATIVO (SPLIT SCREEN) -->
     <!-- ========================================== -->
     <main id="raio-x" class="relative pt-10 pb-20 lg:pt-16 lg:pb-28">
-        <!-- Luz de fundo (Efeito Glow verde) -->
         <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-emerald-500/10 blur-[130px] rounded-full pointer-events-none"></div>
 
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -79,13 +78,12 @@
                 </p>
             </div>
 
-            <!-- Grid Principal Split Screen -->
+            <!-- Grid Split Screen -->
             <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
                 
                 <!-- COLUNA ESQUERDA: QUIZ INTERATIVO (7 Colunas) -->
                 <div class="lg:col-span-7 bg-slate-900/80 border border-slate-800 rounded-2xl p-6 sm:p-8 backdrop-blur shadow-2xl relative">
                     
-                    <!-- Barra de Progresso das Etapas -->
                     <div class="flex items-center justify-between border-b border-slate-800 pb-5 mb-6">
                         <div class="flex items-center gap-3">
                             <span id="step-badge" class="w-8 h-8 rounded-full bg-emerald-500 text-slate-950 font-bold flex items-center justify-center text-sm">1</span>
@@ -101,7 +99,7 @@
                         </div>
                     </div>
 
-                    <!-- ETAPA 1: Identidade e Grelha de Nichos com Saúde -->
+                    <!-- ETAPA 1 -->
                     <div id="step-1" class="quiz-step space-y-6">
                         <div>
                             <label for="company-name" class="block text-sm font-medium text-slate-200 mb-2">Qual é o nome da sua empresa / marca?</label>
@@ -158,7 +156,7 @@
                         </div>
                     </div>
 
-                    <!-- ETAPA 2: Gargalos Operacionais e Atendimento -->
+                    <!-- ETAPA 2 -->
                     <div id="step-2" class="quiz-step hidden space-y-6">
                         <div>
                             <label class="block text-sm font-medium text-slate-200 mb-2">Como você atende a maioria dos clientes hoje?</label>
@@ -207,7 +205,7 @@
                         </div>
                     </div>
 
-                    <!-- ETAPA 3: Produto / Serviço e Preço Dinâmico -->
+                    <!-- ETAPA 3 -->
                     <div id="step-3" class="quiz-step hidden space-y-6">
                         <div>
                             <label id="label-product-name" for="product-name" class="block text-sm font-medium text-slate-200 mb-2">Qual é o seu produto ou serviço principal?</label>
@@ -253,6 +251,7 @@
 
                         <div class="pt-4 flex flex-col gap-3">
                             <a id="cta-whatsapp-link" href="#" target="_blank" 
+                               rel="noopener noreferrer"
                                class="w-full py-4 px-6 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm sm:text-base inline-flex items-center justify-center gap-2 transition shadow-xl shadow-emerald-500/25">
                                 <i class="fa-brands fa-whatsapp text-lg"></i>
                                 Quero colocar uma página profissional no ar para o meu negócio
@@ -268,16 +267,13 @@
                 <div class="lg:col-span-5 flex justify-center sticky top-28">
                     <div class="phone-frame w-[310px] sm:w-[340px] h-[640px] bg-slate-950 rounded-[48px] p-3 border-4 border-slate-700 shadow-2xl relative">
                         
-                        <!-- Dynamic Island -->
                         <div class="absolute top-5 left-1/2 -translate-x-1/2 w-24 h-4 bg-slate-900 rounded-full z-30 flex items-center justify-center">
                             <div class="w-2.5 h-2.5 rounded-full bg-black/60 mr-2"></div>
                             <div class="w-2 h-2 rounded-full bg-blue-900/40"></div>
                         </div>
 
-                        <!-- Tela do Aparelho (Viewport) -->
                         <div class="w-full h-full bg-slate-900 rounded-[38px] overflow-hidden flex flex-col relative text-slate-100">
                             
-                            <!-- Barra de Status Mobile -->
                             <div class="h-9 px-6 pt-2 flex items-center justify-between text-[10px] text-slate-400 font-semibold z-20">
                                 <span>19:42</span>
                                 <div class="flex items-center gap-1.5">
@@ -287,10 +283,8 @@
                                 </div>
                             </div>
 
-                            <!-- Área com Rolagem do Mini Aplicativo -->
                             <div class="flex-1 overflow-y-auto px-4 pb-20 pt-2 space-y-4 text-left custom-scroll">
                                 
-                                <!-- Cabeçalho Camaleão com Cores e Badges Adaptativos -->
                                 <div id="preview-header-card" class="rounded-2xl p-4 transition-all duration-300">
                                     <div class="flex items-center justify-between mb-2">
                                         <span id="preview-niche-tag" class="text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full">
@@ -311,7 +305,6 @@
                                     </p>
                                 </div>
 
-                                <!-- Selo de Canal Direto -->
                                 <div id="preview-badge-direct" class="p-2.5 rounded-xl bg-emerald-500/10 border border-emerald-500/30 flex items-center gap-2.5">
                                     <div class="w-7 h-7 rounded-lg bg-emerald-500 text-slate-950 flex items-center justify-center text-xs shrink-0 font-bold">
                                         <i class="fa-solid fa-shield-halved"></i>
@@ -322,7 +315,6 @@
                                     </div>
                                 </div>
 
-                                <!-- Card do Item / Serviço em Destaque -->
                                 <div>
                                     <div class="flex items-center justify-between mb-2">
                                         <span id="preview-section-title" class="text-[11px] font-bold text-slate-300 uppercase tracking-wider">Mais Pedido</span>
@@ -338,21 +330,18 @@
                                             <p id="preview-item-price" class="text-xs font-extrabold text-emerald-400 mt-0.5">R$ 34,90</p>
                                         </div>
 
-                                        <!-- AÇÃO 1: Mini Carrinho (+ / -) para Delivery -->
                                         <div id="preview-cart-controls" class="flex items-center gap-1.5 bg-slate-900 px-2 py-1 rounded-lg border border-slate-700">
                                             <button type="button" id="cart-minus" class="text-xs text-slate-400 hover:text-white px-1">-</button>
                                             <span id="cart-qty" class="text-xs font-bold text-white px-1">1</span>
                                             <button type="button" id="cart-plus" class="text-xs text-slate-400 hover:text-white px-1">+</button>
                                         </div>
 
-                                        <!-- AÇÃO 2: Botão Direto para Serviços/Agendamento -->
                                         <button type="button" id="preview-service-action-btn" class="hidden px-2.5 py-1.5 rounded-lg text-[10px] font-bold shrink-0 transition">
                                             Agendar Horário
                                         </button>
                                     </div>
                                 </div>
 
-                                <!-- Alerta Visual de Ação Simulada -->
                                 <div id="preview-order-alert" class="hidden p-3 rounded-xl bg-emerald-500 text-slate-950 text-[11px] font-medium animate-bounce shadow-lg">
                                     <div class="flex items-center gap-2">
                                         <i class="fa-solid fa-circle-check text-sm"></i>
@@ -362,7 +351,6 @@
 
                             </div>
 
-                            <!-- Barra Fixa Inferior de Checkout / Agendamento -->
                             <div class="absolute bottom-3 left-3 right-3 p-2.5 rounded-2xl bg-slate-800/95 border border-slate-700 backdrop-blur flex items-center justify-between shadow-lg">
                                 <div>
                                     <span id="preview-bottom-label" class="text-[9px] uppercase tracking-wider text-slate-400 block font-semibold">Total Estimado</span>
@@ -469,6 +457,45 @@
         </div>
     </section>
 
+    <!-- ============================================================== -->
+    <!-- SEÇÃO PORTFÓLIO: BANNER COMPACTO E ELEGANTE                    -->
+    <!-- ============================================================== -->
+    <section id="portfolio" class="py-20 bg-slate-900/60 border-t border-b border-slate-800 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="relative overflow-hidden rounded-3xl bg-gradient-to-r from-slate-900 via-slate-950 to-slate-900 border border-slate-800 p-8 sm:p-12 lg:p-16 shadow-2xl flex flex-col lg:flex-row items-center justify-between gap-8">
+                
+                <!-- Efeito Glow de fundo suave -->
+                <div class="absolute -right-10 -bottom-10 w-72 h-72 bg-emerald-500/10 rounded-full blur-3xl pointer-events-none"></div>
+
+                <!-- Textos Principais -->
+                <div class="max-w-2xl text-center lg:text-left">
+                    <div class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 text-xs font-semibold uppercase tracking-wider mb-4">
+                        <i class="fa-solid fa-briefcase text-xs"></i>
+                        PROJETOS REAIS & PRODUÇÃO
+                    </div>
+                    <h2 class="text-2xl sm:text-4xl font-extrabold text-white tracking-tight leading-tight mb-4">
+                        Conheça Nossos Projetos e Sistemas em Funcionamento
+                    </h2>
+                    <p class="text-sm sm:text-base text-slate-400 leading-relaxed">
+                        Veja demonstrações ao vivo de aplicações web em Django, Landing Pages de alta conversão e cardápios digitais desenvolvidos para microempresas e negócios locais.
+                    </p>
+                </div>
+
+                <!-- Botão de Ação Direto para o Portfólio -->
+                <div class="shrink-0 w-full lg:w-auto">
+                    <a href="https://rafaelalves021.github.io/Portf-lio-Atualizado/" 
+                       target="_blank" 
+                       rel="noopener noreferrer" 
+                       class="w-full lg:w-auto inline-flex items-center justify-center gap-3 px-8 py-4 rounded-xl bg-emerald-500 hover:bg-emerald-400 text-slate-950 font-extrabold text-sm sm:text-base transition-all duration-300 shadow-xl shadow-emerald-500/25 hover:shadow-emerald-500/40 hover:-translate-y-0.5">
+                        <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                        <span>Acessar Portfólio Completo</span>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
     <!-- ========================================== -->
     <!-- SEÇÃO COMPLEMENTAR: METODOLOGIA EM 4 PASSOS -->
     <!-- ========================================== -->
@@ -508,15 +535,14 @@
     </section>
 
     <!-- ========================================== -->
-    <!-- RODAPÉ DA PÁGINA (FOOTER) COM A NOVA MARCA -->
+    <!-- RODAPÉ DA PÁGINA (FOOTER)                  -->
     <!-- ========================================== -->
     <footer class="border-t border-slate-800 py-10 bg-slate-950">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-4 text-xs text-slate-400">
-            <!-- Direitos autorais com DestravaCommerce -->
             <p>© 2026 DestravaCommerce. Todos os direitos reservados. Foco em soluções de vendas e autonomia comercial.</p>
             <div class="flex items-center gap-6">
                 <a href="#raio-x" class="hover:text-white transition">Voltar ao Topo</a>
-                <a href="https://wa.me/5521966386120" target="_blank" class="hover:text-emerald-400 transition flex items-center gap-1.5">
+                <a href="https://wa.me/5521966386120" target="_blank" rel="noopener noreferrer" class="hover:text-emerald-400 transition flex items-center gap-1.5">
                     <i class="fa-brands fa-whatsapp"></i> Fale Conosco
                 </a>
             </div>

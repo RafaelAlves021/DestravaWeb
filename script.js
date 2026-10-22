@@ -2,8 +2,8 @@
  * ===================================================================
  * ARQUIVO: script.js
  * DESCRIÇÃO: Lógica do Simulador Raio-X com comportamento "Camaleão"
- * adaptado para 9 nichos de mercado, agora incluindo clínicas
- * odontológicas e de nutrição com foco em agendamento clínico.
+ * adaptado para 9 nichos de mercado (Alimentação, Estética, Barbearia,
+ * Pet Shop, Fitness, Mecânica e Clínicas de Saúde).
  * ===================================================================
  */
 
@@ -18,7 +18,7 @@ const NICHE_PRESETS = {
         defaultItemName: 'Smash Bacon Duplo Especial',
         defaultPrice: 34.90,
         itemIcon: '<i class="fa-solid fa-burger"></i>',
-        itemType: 'product', // 'product' ativa o carrinho com botões (+ e -)
+        itemType: 'product',
         cardClasses: 'bg-gradient-to-br from-amber-500/20 to-amber-900/10 border border-amber-500/30',
         tagClasses: 'bg-amber-500 text-slate-950',
         iconBgClass: 'bg-slate-700 text-amber-400',
@@ -52,7 +52,7 @@ const NICHE_PRESETS = {
         defaultItemName: 'Corte, Escova & Hidratação',
         defaultPrice: 120.00,
         itemIcon: '<i class="fa-solid fa-wand-magic-sparkles"></i>',
-        itemType: 'service', // 'service' ativa o modo de agendamento online
+        itemType: 'service',
         serviceActionLabel: 'Agendar Horário Online',
         cardClasses: 'bg-gradient-to-br from-fuchsia-500/20 to-rose-900/10 border border-fuchsia-500/30',
         tagClasses: 'bg-fuchsia-500 text-white',
@@ -138,7 +138,6 @@ const NICHE_PRESETS = {
         actionBtnText: 'Solicitar Orçamento',
         bottomLabel: 'Preço Médio'
     },
-    // NOVO NICHO: CLÍNICA ODONTOLÓGICA
     dental: {
         nicheLabel: 'Clínica Odontológica',
         defaultBusinessName: 'Sorriso Prime Odontologia',
@@ -158,7 +157,6 @@ const NICHE_PRESETS = {
         actionBtnText: 'Agendar Consulta',
         bottomLabel: 'Valor Estimado'
     },
-    // NOVO NICHO: CLÍNICA DE NUTRIÇÃO
     nutrition: {
         nicheLabel: 'Clínica de Nutrição',
         defaultBusinessName: 'NutriVida Saúde & Performance',
@@ -190,7 +188,7 @@ const appState = {
     cartQuantity: 1
 };
 
-// 3. REFERÊNCIAS DOS ELEMENTOS DO DOM
+// 3. REFERÊNCIAS DOS ELEMENTOS DO DOM (QUIZ & SMARTPHONE)
 const step1 = document.getElementById('step-1');
 const step2 = document.getElementById('step-2');
 const step3 = document.getElementById('step-3');
@@ -219,7 +217,6 @@ const btnFinishQuiz = document.getElementById('finish-quiz');
 const btnRestartQuiz = document.getElementById('restart-quiz');
 const ctaWhatsappLink = document.getElementById('cta-whatsapp-link');
 
-// Elementos do Mockup Camaleão
 const previewHeaderCard = document.getElementById('preview-header-card');
 const previewNicheTag = document.getElementById('preview-niche-tag');
 const previewStatusBadge = document.getElementById('preview-status-badge');
@@ -248,30 +245,23 @@ const previewOrderAlertText = document.getElementById('preview-order-alert-text'
 function renderSmartphone() {
     const preset = NICHE_PRESETS[appState.nicheKey];
 
-    // Atualiza nome da empresa ou clínica
     previewBusinessName.textContent = appState.companyName.trim() || preset.defaultBusinessName;
-
-    // Atualiza o cabeçalho, cores de gradiente e badges de status
     previewHeaderCard.className = `rounded-2xl p-4 transition-all duration-300 ${preset.cardClasses}`;
     previewNicheTag.textContent = preset.nicheLabel;
     previewNicheTag.className = `text-[10px] uppercase font-bold tracking-wider px-2 py-0.5 rounded-full ${preset.tagClasses}`;
     previewStatusBadge.textContent = preset.statusBadge;
     previewDeliveryTime.textContent = preset.infoSubtext;
 
-    // Atualiza os títulos da seção
     previewSectionTitle.textContent = preset.sectionTitle;
     previewTagFeature.textContent = preset.tagFeature;
 
-    // Atualiza ícone e estilo do item
     previewItemIcon.innerHTML = preset.itemIcon;
     previewItemIcon.className = `w-12 h-12 rounded-lg flex items-center justify-center text-xl shrink-0 ${preset.iconBgClass}`;
     
-    // Atualiza nome e preço do item cadastrado
     const currentName = appState.productName.trim() || preset.defaultItemName;
     previewItemName.textContent = currentName;
     previewItemPrice.textContent = `R$ ${appState.productPrice.toFixed(2).replace('.', ',')}`;
 
-    // Alterna dinamicamente entre Modo Carrinho (+ e -) e Modo Serviço/Agendamento
     if (preset.itemType === 'product') {
         previewCartControls.classList.remove('hidden');
         previewServiceActionBtn.classList.add('hidden');
@@ -286,11 +276,9 @@ function renderSmartphone() {
         previewTotalPrice.textContent = `R$ ${appState.productPrice.toFixed(2).replace('.', ',')}`;
     }
 
-    // Atualiza rótulo inferior e texto do botão principal do telemóvel
     previewBottomLabel.textContent = preset.bottomLabel;
     previewBtnOrderText.textContent = preset.actionBtnText;
 
-    // Adapta o texto das perguntas na Etapa 3
     if (preset.itemType === 'product') {
         labelProductName.textContent = 'Qual é o seu produto mais vendido (Carro-chefe)?';
         labelProductPrice.textContent = 'Preço de venda médio (R$):';
@@ -299,13 +287,12 @@ function renderSmartphone() {
         labelProductPrice.textContent = 'Valor médio do serviço / consulta (R$):';
     }
 
-    // Atualiza a URL do botão para o WhatsApp
     updateWhatsAppLink();
 }
 
 // 5. ATUALIZAÇÃO DO LINK DO WHATSAPP
 function updateWhatsAppLink() {
-    const seuNumeroWhatsapp = "5521966386120"; // Número comercial configurado
+    const seuNumeroWhatsapp = "5521966386120";
     const preset = NICHE_PRESETS[appState.nicheKey];
     const empresa = appState.companyName.trim() || preset.defaultBusinessName;
     const item = appState.productName.trim() || preset.defaultItemName;
@@ -321,7 +308,7 @@ Gostaria de saber como ter um sistema profissional próprio como esse no ar!`;
     ctaWhatsappLink.href = `https://wa.me/${seuNumeroWhatsapp}?text=${encodeURIComponent(mensagem)}`;
 }
 
-// 6. EVENTOS DA ETAPA 1 (Nome e Seleção dos Nichos)
+// 6. EVENTOS DA ETAPA 1
 inputCompanyName.addEventListener('input', (e) => {
     appState.companyName = e.target.value;
     renderSmartphone();
@@ -335,7 +322,6 @@ nicheButtons.forEach(button => {
         const chosenKey = button.dataset.niche;
         appState.nicheKey = chosenKey;
 
-        // Atualiza os valores padrão do formulário com base no nicho selecionado
         const preset = NICHE_PRESETS[chosenKey];
         inputProductName.value = preset.defaultItemName;
         inputProductPrice.value = preset.defaultPrice.toFixed(2);
@@ -359,7 +345,7 @@ btnNextToStep2.addEventListener('click', () => {
     dot2.classList.add('bg-emerald-500');
 });
 
-// 7. EVENTOS DA ETAPA 2 (Canais de Atendimento)
+// 7. EVENTOS DA ETAPA 2
 btnBackToStep1.addEventListener('click', () => {
     step2.classList.add('hidden');
     step1.classList.remove('hidden');
@@ -390,7 +376,7 @@ btnNextToStep3.addEventListener('click', () => {
     dot3.classList.add('bg-emerald-500');
 });
 
-// 8. EVENTOS DA ETAPA 3 (Itens e Preços)
+// 8. EVENTOS DA ETAPA 3
 btnBackToStep2.addEventListener('click', () => {
     step3.classList.add('hidden');
     step2.classList.remove('hidden');
@@ -413,7 +399,7 @@ inputProductPrice.addEventListener('input', (e) => {
     renderSmartphone();
 });
 
-// 9. FINALIZAÇÃO DA SIMULAÇÃO (Tela de Sucesso)
+// 9. FINALIZAÇÃO DA SIMULAÇÃO
 btnFinishQuiz.addEventListener('click', () => {
     step3.classList.add('hidden');
     stepSuccess.classList.remove('hidden');
@@ -441,7 +427,7 @@ btnRestartQuiz.addEventListener('click', () => {
     dot3.classList.add('bg-slate-700');
 });
 
-// 10. CONTROLES DO SMARTPHONE (CARRINHO E BOTÕES INTERATIVOS)
+// 10. CONTROLES DO SMARTPHONE
 btnCartPlus.addEventListener('click', () => {
     appState.cartQuantity += 1;
     renderSmartphone();
@@ -454,7 +440,6 @@ btnCartMinus.addEventListener('click', () => {
     }
 });
 
-// Clique no botão de serviço (ex.: Solicitar Pré-Agendamento)
 previewServiceActionBtn.addEventListener('click', () => {
     const preset = NICHE_PRESETS[appState.nicheKey];
     previewOrderAlertText.innerHTML = `<strong>${preset.serviceActionLabel}:</strong> Horário reservado no sistema!`;
@@ -464,7 +449,6 @@ previewServiceActionBtn.addEventListener('click', () => {
     }, 3000);
 });
 
-// Clique no botão inferior do celular
 previewBtnOrder.addEventListener('click', () => {
     const preset = NICHE_PRESETS[appState.nicheKey];
     previewOrderAlertText.innerHTML = `<strong>${preset.actionBtnText}:</strong> Pedido formatado para o WhatsApp!`;
@@ -474,7 +458,7 @@ previewBtnOrder.addEventListener('click', () => {
     }, 3000);
 });
 
-// 11. INICIALIZAÇÃO AUTOMÁTICA
+// 11. INICIALIZAÇÃO AUTOMÁTICA DO SIMULADOR
 const initialPreset = NICHE_PRESETS[appState.nicheKey];
 inputProductName.value = initialPreset.defaultItemName;
 inputProductPrice.value = initialPreset.defaultPrice.toFixed(2);
